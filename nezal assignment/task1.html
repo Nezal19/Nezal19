@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>User details form </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='task1.css'>
+    <script src='main.js'></script>        
+</head>
+<body>
+    
+    <section>
+       
+            <h3> Step 1 : your details</h3>
+            <center>
+             <div class="step1">
+                <div class="name">
+                    <label><b>Name</b></label>&nbsp;
+                    <input type="text" name="name" placeholder="Firstname and lastname">
+                </div>
+                
+              <div class="email">
+                   <label><b>Email</b></label>&nbsp;
+                    <input type="text" name="Email" placeholder="Example@domain.com">
+                </div>
+
+                <div class="phone">
+                    <label><b>Phone</b></label>&nbsp;
+                    <input type="text" name="phone" placeholder="Eg.+4475000000">
+                </div>
+              
+                
+             </div>
+             </center>
+            <h3> Step 2 : Delivery Address</h3>
+            <center>
+                <div class="step2">
+            <div class="address">
+                <label align="left"><b>Address</b></label>&nbsp;
+                <textarea name="address" cols="45" rows="4"></textarea>
+            </div>
+
+            <div class="post">
+                <label><b>postcode </b></label>&nbsp
+                <input type="text" name="post">
+            </div>
+
+            <div class="country">
+                <label><b>country</b></label>&nbsp;
+                <input type="text" name="country" >
+            </div>
+        </center>
+         
+            <h3> step 3 : Card Details</h3>
+        <center>
+            <div class="step3">
+                <div class="ctype">&nbsp;
+                    <label><b>Card type</b></label><br>
+
+                    <input id="visa" type="radio" name=visa ><label>Visa</label>
+                    <input id="amex" type="radio" name=AmEx ><label>AmEx</label>
+                    <input id="mcard"  type="radio" name="mastercard"> <label>mastercard</label>  
+                </div>
+                <div class="cnumb">
+                    <label><b>Card number</b></label>&nbsp;
+                    <input type="text" name="cardnumber" >
+                </div>
+                <div class="scode">
+                    <label> <b>Security code</b></label>&nbsp;
+                    <input type="text" name="Securitycode" >
+                </div>
+                <div class="ncard">
+                    <label><b>Name on card</b></label>&nbsp;
+                    <input type="text" name="nameoncard" >
+                </div> 
+            </div>
+        </center>
+        
+        <div>
+            <button type="submit" class="buy"> Buy It !</button>
+        </div>
+        
+    </section>
+    
+</body>
+</html>

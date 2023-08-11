@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+background-color: greenyellow;
+}
+h3{
+    margin-top: 10px;
+    margin-left: 25%;
+    margin-bottom: 1%;
+    padding: 5px;
+}
+.name,.email,.phone,.address,.post,.country,.cnumb,.scode,.ncard{
+    background-color: rgb(250, 250, 163,0.4);
+    width: 50%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 4%; 
+    padding: 15px;
+    border-radius: 5%;
+    border: solid white;
+}
+.ctype{
+    background-color: rgb(250, 250, 163,0.4);
+    width: 50%;
+    text-align: left;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 4%; 
+    padding: 15px;
+    border-radius: 5%;
+    border: solid white; }   
+
+.buy{
+    background-color: black;
+    color: whitesmoke;
+    height: 20%;
+    width: 20%;
+    margin-top: 2%;
+    margin-left: 40%;
+    align-items: center;
+    border-radius: 60%;
+
+}
+input{
+    width: 70%;
+    height:auto;
+}
+#visa{
+    width:5%;
+  height: auto;
+}
+#amex{
+    width: 5%;
+    height: auto;
+}
+#mcard{
+    width: 5%;
+    height: auto;
+}

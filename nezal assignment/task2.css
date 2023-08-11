@@ -1,0 +1,52 @@
+body  
+{  
+    background-color: aqua;
+}  
+.a  
+{  
+    width: auto;  
+    height: 100%;  
+    padding: 3%;  
+    background-color: darkmagenta;  
+}  
+.formcontrolfocus  
+{  
+    box-shadow: none;  
+    border-color: #BA68C8;  
+}  
+.profilebutton  
+{  
+    background: #BA68C8;  
+    box-shadow: none;  
+    border: none;  
+}  
+.profilebuttonhover  
+{  
+    background: #BA68C8;  
+}  
+.profilebuttonfocus  
+{  
+    background: #BA68C8;  
+    box-shadow: none  
+}  
+.profilebuttonactive  
+{  
+    background: #BA68C8;  
+    box-shadow: none  
+}  
+.backhover  
+{  
+    color:#BA68C8;  
+    cursor: pointer  
+}  
+.labels  
+{  
+    font-size: 11px  
+}  
+.addexperiencehover  
+{  
+    background: #BA68C8;  
+    color: #fff;  
+    cursor: pointer;  
+    border: solid 1px #BA68C8  
+}
