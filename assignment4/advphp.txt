@@ -1,0 +1,319 @@
+#OOP
+
+1)What Is Object Oriented Programming?
+->*OOP stands for Object-Oriented Programming.
+*Procedural programming is about writing procedures or functions that perform operations on the data, while object-oriented programming is about creating objects that contain both data and functions.
+
+2)What Are Properties Of Object Oriented Systems? 
+-> *classes
+*objects
+* encapsulation
+* inheritance
+* abstraction
+* polymorphism.
+
+3)What Is Difference Between Class And Interface? 
+->
+class:
+*A class is a template for objects, and an object is an instance of class.
+*A class is defined by using the class keyword, followed by the name of the class and a pair of curly braces ({}). All its properties and methods go inside the braces
+
+Interfaces:
+*Interfaces allow you to specify what methods a class should implement.
+*Interfaces make it easy to use a variety of different classes in the same way. When one or more classes use the same interface, it is referred to as "polymorphism".
+*Interfaces are declared with the interface keyword
+
+4) What Is Overloading? 
+->*overloading is the ability to create multiple functions of the same name with different implementations.
+*overloading is done with the help of magic function __call(). This function takes function name and arguments.
+
+5) What Is T_PAAMAYIM_NEKUDOTAYIM (Scope Resolution Operator (::) with Example 
+-> <?php
+ A
+{
+    public static function A()
+    {
+        echo "nezal";
+    }
+}
+A::A();
+?>
+
+6) What are the differences between abstract classes and interfaces? 
+->
+Interface Class:
+*Interface class supports multiple inheritance feature
+*Interface does not contain a data member.
+*The interface does not allow containers.
+*An interface class only contains incomplete members which refer to the signature of the member.
+*Since everything is assumed to be public, an interface class does not have access modifiers by default.
+*Any member of an interface cannot be static.
+
+Abstract Class:
+*Abstract class does not support multiple inheritances.
+*Abstract class does contain a data member.
+*The abstract class supports containers.
+*Abstract class contains both incomplete and complete members.
+*An abstract class can contain access modifiers within subs, functions, and properties.
+*Only a complete member of the abstract class can be static.
+
+
+7)Define Constructor and Destructor? 
+->
+Constructor:
+*A constructor allows you to initialize an object's properties upon creation of the object.
+*If you create a __construct() function, PHP will automatically call this function when you create an object from a class.
+
+Destructor:
+*A destructor is called when the object is destructed or the script is stopped or exited.
+*If you create a __destruct() function, PHP will automatically call this function at the end of the script.
+
+8)How to Load Classes in PHP?
+->"New" 
+
+9) How to Call Parent Constructor? 
+->"parent::__construct "
+
+10) Are Parent Constructor Called Implicitly When Create An ObjectOf Class? 
+-> Parent constructors are not called implicitly if the child class defines a constructor.
+
+11) What Happen, If Constructor Is Defined As Private Or Protected? 
+-> If a constructor is declared as private, then its objects are only accessible from within the declared class. You cannot access its objects from outside the constructor class.
+
+12) What are PHP Magic Methods/Functions? List them Write program for Static Keyword in PHP? 
+-> __construct(), __destruct(), __call(), __callStatic(), __get(), __set(), __isset(), __unset(), __sleep(), __wakeup(), __serialize(), __unserialize(), __toString(), __invoke(), __set_state(), __clone(), __debugInfo().
+
+13)Create multiple Traits and use it in to a single class? 
+-> 
+<?php
+trait A
+{
+    public function A()
+    {
+        echo "Hello i am NEZAL"."<br>";
+    }
+}
+ trait B
+ {
+    public function B()
+    {
+        echo "My surname is UCHAT";
+    }
+ }
+class C
+{
+    use A,B;
+}
+$obj=new C;
+$obj->A();
+$obj->B();
+?>
+
+14)Write PHP Script of Object Iteration? 
+->  echo "\n"; $class->iterateVisible(); ?> 
+
+15) Use of The $this keyword
+-> this keyword is used inside a class, generally with in the member functions to access non-static members of a class for the current object. 
+this keyword should be preceded with a $ symbol. In case of this operator, we use the -> symbol.
+
+16) Consider the exercise 11 and add a edit link near delete link e.g. Clicking up on edit button a particular row should be open in editing mode 
+e.g. on the Particular row there should be filled text box with data and on the option column there should be a confirm button clicking upon it arrow should be updated. 
+->
+<script> 
+        function addData() { 
+            // Get input values 
+            let name = 
+                document.getElementById("nameInput").value; 
+            let email = 
+                document.getElementById("emailInput").value; 
+            let mobile = 
+                document.getElementById("numberInput").value; 
+            let address = 
+                document.getElementById("addressInput").value; 
+            
+            // Get the table and insert a new row at the end 
+            let table = document.getElementById("outputTable"); 
+            let newRow = table.insertRow(table.rows.length); 
+            
+            // Insert data into cells of the new row 
+            newRow.insertCell(0).innerHTML = name; 
+            newRow.insertCell(1).innerHTML = email; 
+            newRow.insertCell(2).innerHTML = mobile; 
+            newRow.insertCell(3).innerHTML = address; 
+            newRow.insertCell(4).innerHTML = 
+                '<button onclick="editData(this)">Edit</button>'+ 
+                '<button onclick="deleteData(this)">Delete</button>'; 
+            
+            // Clear input fields 
+            clearInputs(); 
+        } 
+  
+        function editData(button) { 
+            
+            // Get the parent row of the clicked button 
+            let row = button.parentNode.parentNode; 
+            
+            // Get the cells within the row 
+            let nameCell = row.cells[0]; 
+            let emailCell = row.cells[1]; 
+            let mobileCell = row.cells[2]; 
+            let addressCell = row.cells[3]; 
+            
+            // Prompt the user to enter updated values 
+            let nameInput = 
+                prompt("Enter the updated name:", 
+                    nameCell.innerHTML); 
+            let emailInput = 
+                prompt("Enter the updated email:", 
+                    emailCell.innerHTML); 
+            let numberInput = 
+                prompt("Enter the updated mobile details:", 
+                    mobileCell.innerHTML 
+                ); 
+            let addressInput = 
+                prompt("Enter the updated address:", 
+                    addressCell.innerHTML 
+                ); 
+            
+            // Update the cell contents with the new values 
+            nameCell.innerHTML = nameInput; 
+            emailCell.innerHTML = emailInput; 
+            mobileCell.innerHTML = numberInput; 
+            addressCell.innerHTML = addressInput; 
+        } 
+        function deleteData(button) { 
+            
+            // Get the parent row of the clicked button 
+                         let row = button.parentNode.parentNode; 
+            // Remove the row from the table 
+                        row.parentNode.removeChild(row); 
+        } 
+        function clearInputs() { 
+            // Clear input fields 
+            document.getElementById("nameInput").value = ""; 
+            document.getElementById("emailInput").value = ""; 
+            document.getElementById("numberInput").value = ""; 
+            document.getElementById("addressInput").value = ""; 
+        } 
+    </script> 
+
+17) Create Hotel Room Booking System User can book room by 3 ways 
+• Full day 
+• Half day 
+• Custom 
+If user select for the full day than user only have selection for the checking checkout date. If user select Half day than user have option of date and slot option(like user want to book room for first half – Morning (8AM to 6PM) if user select for second halfit‟s for evening (7PM to Morning 7AM)). Do proper validation like if user can book only available slot. (have touse jQuery -> Ajax, validation, Json passing)
+
+
+
+
+                                                               #jquery
+
+1) What is jQuery? 
+->   jQuery is a JavaScript library.
+
+2) How are JavaScript and jQuery different? 
+->  JavaScript is a programming language and jQuery is a library that consists of JavaScript code.
+
+3) Which is the starting point of code execution in jQuery? 
+-> $(document). ready() function
+
+4)Document Load Vs Window. Load() jQuery ?
+-> $(window). load() event is fired after whole content is loaded.
+
+5) What is the difference between prop and attr? 
+->* prop() method provides a way to explicitly retrieve property values
+* attr() retrieves attributes
+
+6) Explain Difference Between JQuery And JavaScript?
+->* JavaScript is a programming language
+*jQuery is concise and uses fewer lines of code
+
+7) How We Can Select The Specified <li> Element From The ListOf <li>Elements In <ul>?
+->
+ 
+8) In <table> Design Change The Color Of Even <tr> Elements To “green”And Change The Color Of Odd <tr> Elements To “blue” Color? Give An Example Code?
+->
+
+9)How We Can Implement Animation Effects In Jquery?
+->animate() method 
+
+10) Apply jQuery validation using library.
+->    <form> <input required> </form> <script src="jquery.js"></script>
+ <script src="jquery.validate.js"></script> <script> 
+ $("form")define(["jquery", "jquery. ...
+ $("#myForm"). ...
+ $("#myform").
+
+11) Get state data by country selection (Ajax).
+->db.php-
+
+<?php
+    $servername = 'localhost';
+    $username = 'root';
+    $password = '';
+    $dbname = "demos";
+    $conn = mysqli_connect($servername,$username,$password,"$dbname");
+    if(!$conn){
+        die('Could not Connect MySql Server:' .mysql_error());
+    }
+?>
+
+index.php-
+    <script>
+        $(document).ready(function() {
+            $('#country-dropdown').on('change', function() {
+                var country_id = this.value;
+                $.ajax({
+                    url: "states-by-country.php",
+                    type: "POST",
+                    data: {
+                        country_id: country_id
+                    },
+                    cache: false,
+                    success: function(result){
+                        $("#state-dropdown").html(result);
+                        $('#city-dropdown').html('<option value="">Select State First</option>'); 
+                    }
+    </script>
+<?php
+    require_once "db.php";
+    $country_id = $_POST["country_id"];
+
+    $result = mysqli_query($conn,"SELECT * FROM states where country_id = $country_id");
+?>
+    <option value="">Select State</option>
+
+    <?php
+        while($row = mysqli_fetch_array($result)) {
+    ?>
+            <option value="<?php echo $row["id"];?>"><?php echo $row["name"];?></option>
+    <?php
+        }
+    ?>
+
+13) Image uploading with preview.
+-> HTML -
+<input type='file' onchange="readURL(this);" />
+<img id="blah" src="http://placehold.it/180" alt="your image" />
+
+CSS -
+img{
+  max-width:180px;
+}
+input[type=file]{
+padding:10px;
+background:#2d2d2d;}
+
+JS -
+   function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
