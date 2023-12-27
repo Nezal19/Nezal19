@@ -1,0 +1,109 @@
+1) What is jQuery? 
+->   jQuery is a JavaScript library.
+
+2) How are JavaScript and jQuery different? 
+->  JavaScript is a programming language and jQuery is a library that consists of JavaScript code.
+
+3) Which is the starting point of code execution in jQuery? 
+-> $(document). ready() function
+
+4)Document Load Vs Window. Load() jQuery ?
+-> $(window). load() event is fired after whole content is loaded.
+
+5) What is the difference between prop and attr? 
+->* prop() method provides a way to explicitly retrieve property values
+* attr() retrieves attributes
+
+6) Explain Difference Between JQuery And JavaScript?
+->* JavaScript is a programming language
+*jQuery is concise and uses fewer lines of code
+
+7) How We Can Select The Specified <li> Element From The ListOf <li>Elements In <ul>?
+->
+ 
+8) In <table> Design Change The Color Of Even <tr> Elements To “green”And Change The Color Of Odd <tr> Elements To “blue” Color? Give An Example Code?
+->
+
+9)How We Can Implement Animation Effects In Jquery?
+->animate() method 
+
+10) Apply jQuery validation using library.
+->    <form> <input required> </form> <script src="jquery.js"></script>
+ <script src="jquery.validate.js"></script> <script> 
+ $("form")define(["jquery", "jquery. ...
+ $("#myForm"). ...
+ $("#myform").
+
+11) Get state data by country selection (Ajax).
+->db.php-
+
+<?php
+    $servername = 'localhost';
+    $username = 'root';
+    $password = '';
+    $dbname = "demos";
+    $conn = mysqli_connect($servername,$username,$password,"$dbname");
+    if(!$conn){
+        die('Could not Connect MySql Server:' .mysql_error());
+    }
+?>
+
+index.php-
+    <script>
+        $(document).ready(function() {
+            $('#country-dropdown').on('change', function() {
+                var country_id = this.value;
+                $.ajax({
+                    url: "states-by-country.php",
+                    type: "POST",
+                    data: {
+                        country_id: country_id
+                    },
+                    cache: false,
+                    success: function(result){
+                        $("#state-dropdown").html(result);
+                        $('#city-dropdown').html('<option value="">Select State First</option>'); 
+                    }
+    </script>
+<?php
+    require_once "db.php";
+    $country_id = $_POST["country_id"];
+
+    $result = mysqli_query($conn,"SELECT * FROM states where country_id = $country_id");
+?>
+    <option value="">Select State</option>
+
+    <?php
+        while($row = mysqli_fetch_array($result)) {
+    ?>
+            <option value="<?php echo $row["id"];?>"><?php echo $row["name"];?></option>
+    <?php
+        }
+    ?>
+
+13) Image uploading with preview.
+-> HTML -
+<input type='file' onchange="readURL(this);" />
+<img id="blah" src="http://placehold.it/180" alt="your image" />
+
+CSS -
+img{
+  max-width:180px;
+}
+input[type=file]{
+padding:10px;
+background:#2d2d2d;}
+
+JS -
+   function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
